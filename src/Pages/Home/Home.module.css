@@ -1,0 +1,72 @@
+.logo {
+    background-image: url(../../../public/banner.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 516px;
+    height: 270px;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center
+}
+
+.savingAndBtnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #4E944F;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    background-color: white;
+}
+
+.savingInput {
+    padding: 30px;
+    margin: 20px;
+    text-decoration: none;
+    outline: none;
+    border: 2px solid #B4E197;
+    border-radius: 10px;
+}
+
+.saveBtn{
+    padding: 20px;
+    background-color:#B4E197;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background-color: white;
+    color: #B4E197;
+    border: 2px solid #B4E197;
+}
+
+.saveBtnContainer {
+    border: 3px solid #4E944F;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 45px;
+}
+.saveBtnContainer:hover{
+    background-color:#B4E197;
+}
+
+.explanation {
+    font-family: Koulen;
+    font-size: 18px;
+    margin: 0px;
+    color: #FFB72B;   
+}

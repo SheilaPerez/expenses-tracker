@@ -1,5 +1,6 @@
-import './App.css';
+import styles from './App.module.css';
 import { useEffect } from "react";
+import Home from './Pages/Home'
 
 function App() {
   useEffect(() => {
@@ -11,8 +12,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      Content
+    <div>
+      <Home></Home>
     </div>
   );
 }
