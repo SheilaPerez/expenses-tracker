@@ -1,0 +1,12 @@
+.logo {
+    background-image: url(../../../public/banner.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 516px;
+    height: 270px;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center
+}
