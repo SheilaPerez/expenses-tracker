@@ -1,3 +1,14 @@
+.savingsContainer {
+   margin: 60px;
+   border: 2px solid #97C4B8;
+   width: 320px;
+   border-radius: 20px;
+   padding: 30px;
+   text-align: center;
+   font-weight: 900;
+}
+
 .savings {
-    border: 2px solid #65C18C;
+    font-weight: 400;
+    font-size: 20px;
 }
