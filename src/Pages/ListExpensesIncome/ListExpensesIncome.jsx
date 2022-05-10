@@ -5,20 +5,20 @@ import styles from './ListExpensesIncome.module.css';
 import Modal from '../../Components/Modal';
 
 const ListExpensesIncome = () => {
-  const [isOpen, setIsOpne] = useState(false);
+  const [isModalOpen, setIsModalOpne] = useState(false);
 
-  const handleClickOpenModal = () => {
-    setIsOpne(true);
+  const handleOpenModal = () => {
+    setIsModalOpne(true);
   }
 
   const handleCloseModal = (e) => {
-    setIsOpne(false);
+    setIsModalOpne(false);
   }
   return (
     <div className={styles.listContainer}>
       <Savings></Savings>
-      <ChooseOperation handleClickModal={handleClickOpenModal}></ChooseOperation>
-      {isOpen && <Modal handleClickCloseModal={handleCloseModal} />}
+      <ChooseOperation handleClickModal={handleOpenModal}></ChooseOperation>
+      {isModalOpen && <Modal handleClickCloseModal={handleCloseModal} />}
     </div>
 )};
 
