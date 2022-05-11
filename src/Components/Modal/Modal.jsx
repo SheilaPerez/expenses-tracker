@@ -1,8 +1,20 @@
 import styles from './Modal.module.css';
+import { useState } from 'react';
 
-const Modal = ({ handleClickCloseModal }) => {
+
+const Modal = ({ handleClickCloseModal, handleClickSave }) => {
+  const [money, setMoney] = useState(0);
+
   const stopPropagation = (e) => {
     e.stopPropagation();
+  }
+
+  const handleChangeMoney = (e) => {
+    setMoney(e.target.value);
+  }
+
+  const handleClickAdd = () => {
+    handleClickSave({money})
   }
 
   return (
@@ -11,11 +23,11 @@ const Modal = ({ handleClickCloseModal }) => {
         <div className={styles.operationContainer}>
           <p>Operation</p>
           <div>
-            <input type="radio" value="deposit"></input>
+            <input type="radio" value="deposits" name="expenseType"></input>
             <label>deposit money</label>
           </div>
           <div>
-            <input type="radio" value="expens"></input>
+            <input type="radio" value="expens" name="expenseType"></input>
             <label>Expens</label>
           </div>
         </div>
@@ -31,8 +43,9 @@ const Modal = ({ handleClickCloseModal }) => {
         </div>
         <div className={styles.moneyContainer}>
           <p>Money</p>
-          <input type="text"></input>
+          <input type="text" onChange={handleChangeMoney}></input>
         </div>
+        <button type="button" onClick={handleClickAdd}>Add to list</button>
       </div>
     </div>
   )

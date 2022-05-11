@@ -1,4 +1,3 @@
-import styles from './App.module.css';
 import { useEffect, useState } from "react";
 import Home from './Pages/Home'
 import ListExpensesIncome from './Pages/ListExpensesIncome';
