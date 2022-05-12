@@ -8,7 +8,7 @@ const HomeInputBtn = () => {
   const navigate = useNavigate();
 
   const handleChangeSavings = (event) => {
-    setSavings(event.target.value);
+    setSavings(parseInt(event.target.value));
   }
 
   const handleClickSave = () => {

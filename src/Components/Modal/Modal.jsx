@@ -1,20 +1,38 @@
 import styles from './Modal.module.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import GlobalContextSavings from '../../Context/GlobalContextSavings';
 
-
-const Modal = ({ handleClickCloseModal, handleClickSave }) => {
+const Modal = ({ handleClickCloseModal, handleClickSave, onChangeMoney, onChangeTypeExpense }) => {
   const [money, setMoney] = useState(0);
+  const [expenseType, setexpenseType] = useState();
+  const [expenditure, setExpenditure] = useState();
+  const { savings, setSavings } = useContext(GlobalContextSavings);
 
   const stopPropagation = (e) => {
     e.stopPropagation();
   }
 
   const handleChangeMoney = (e) => {
-    setMoney(e.target.value);
+    setMoney(parseInt(e.target.value));
+    onChangeMoney(parseInt(e.target.value));
+  }
+
+  const handleChangesExpenseType = (e) => {
+    setexpenseType(e.target.value);
+    onChangeTypeExpense(e.target.value);
+  }
+
+  const handleChangesExpenditure = (e) => {
+    setExpenditure(e.target.value)
   }
 
   const handleClickAdd = () => {
-    handleClickSave({money})
+    handleClickSave({
+      money,
+      expenseType,
+      expenditure
+    })
+    setSavings(expenseType === "deposits" ? savings + money : savings - money )
   }
 
   return (
@@ -23,22 +41,22 @@ const Modal = ({ handleClickCloseModal, handleClickSave }) => {
         <div className={styles.operationContainer}>
           <p>Operation</p>
           <div>
-            <input type="radio" value="deposits" name="expenseType"></input>
+            <input type="radio" value="deposits" name="expenseType" onChange={handleChangesExpenseType}></input>
             <label>deposit money</label>
           </div>
           <div>
-            <input type="radio" value="expens" name="expenseType"></input>
+            <input type="radio" value="expens" name="expenseType" onChange={handleChangesExpenseType}></input>
             <label>Expens</label>
           </div>
         </div>
         <div className={styles.expenditureContainer}>
           <p>Type of expenditure</p>
-          <select>
-            <option value="choose">Choose an option</option>
-            <option value="food">Food</option>
-            <option value="clothes">Clothes</option>
-            <option value="leisure">leisure</option>
-            <option value="travel">Travels</option>
+          <select onChange={handleChangesExpenditure}>
+            <option value="Choose">Choose an option</option>
+            <option value="Food">Food</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Leisure">leisure</option>
+            <option value="Travel">Travels</option>
           </select>
         </div>
         <div className={styles.moneyContainer}>

@@ -22,12 +22,14 @@ const ListExpensesIncome = () => {
     setOperationList([...operationList, operation]);
     handleCloseModal();
   }
+
   return (
 
       <div className={styles.listContainer}>
         <Savings></Savings>
         <ChooseOperation handleClickModal={handleOpenModal}></ChooseOperation>
-      {isModalOpen && <Modal handleClickCloseModal={handleCloseModal} handleClickSave={onModalSave}/>}
+      {isModalOpen && <Modal handleClickCloseModal={handleCloseModal}
+                              handleClickSave={onModalSave}/>}
         <List operationList={operationList}></List>
       </div>
 

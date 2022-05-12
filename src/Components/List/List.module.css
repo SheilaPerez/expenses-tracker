@@ -1,6 +1,18 @@
-// import styled from 'styled-components';
+.greenText {
+    color: green;
+}
 
-// export const Test = styled.div`
-//  display: flex;
-// `;
-//
+.redText {
+    color: red;
+}
+
+.expenditure {
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+.operationList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
